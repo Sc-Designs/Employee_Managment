@@ -1,0 +1,241 @@
+const employees = [
+  {
+    Id: 1,
+    name: "Harsh",
+    email: "employee1@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Prepare monthly report",
+        description: "Compile data for the monthly sales report.",
+        date: "2024-11-01",
+        category: "Reporting",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Submit expense report",
+        description: "Complete and submit the monthly expense report.",
+        date: "2024-10-15",
+        category: "Finance",
+      },
+      {
+        active: true,
+        newTask: false,
+        completed: false,
+        failed: false,
+        title: "Client meeting follow-up",
+        description: "Follow up with client on project requirements.",
+        date: "2024-10-30",
+        category: "Client Relations",
+      },
+    ],
+    taskNumbers: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0,
+    },
+  },
+  {
+    Id: 2,
+    name: "Sarthak",
+    email: "employee2@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Inventory check",
+        description: "Perform a monthly check on office inventory.",
+        date: "2024-10-05",
+        category: "Maintenance",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Plan team meeting",
+        description: "Organize the agenda for the quarterly team meeting.",
+        date: "2024-11-10",
+        category: "Planning",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Update client details",
+        description: "Ensure client contact information is up to date.",
+        date: "2024-10-20",
+        category: "Client Relations",
+      },
+    ],
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 2,
+      failed: 0,
+    },
+  },
+  {
+    Id: 3,
+    name: "Mike",
+    email: "employee3@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Create presentation slides",
+        description: "Prepare slides for the annual conference.",
+        date: "2024-11-05",
+        category: "Presentation",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Complete training module",
+        description: "Finish the compliance training.",
+        date: "2024-10-25",
+        category: "Training",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: true,
+        title: "Draft project proposal",
+        description: "Write a proposal for the upcoming project.",
+        date: "2024-10-10",
+        category: "Project Management",
+      },
+    ],
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 2,
+      failed: 1,
+    },
+  },
+  {
+    Id: 4,
+    name: "Danish",
+    email: "employee4@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Schedule client calls",
+        description: "Arrange calls with top clients for next month.",
+        date: "2024-11-02",
+        category: "Client Relations",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Update system software",
+        description:
+          "Ensure all systems are updated to the latest software version.",
+        date: "2024-10-12",
+        category: "IT",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: true,
+        title: "Organize event logistics",
+        description: "Coordinate details for the annual team event.",
+        date: "2024-10-08",
+        category: "Event Management",
+      },
+    ],
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 2,
+      failed: 1,
+    },
+  },
+  {
+    Id: 5,
+    name: "Sara",
+    email: "employee5@example.com",
+    password: "123",
+    tasks: [
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Revise policy documents",
+        description: "Review and update company policy documentation.",
+        date: "2024-11-15",
+        category: "Compliance",
+      },
+      {
+        active: true,
+        newTask: true,
+        completed: false,
+        failed: false,
+        title: "Create marketing plan",
+        description: "Develop a strategic marketing plan for Q1.",
+        date: "2024-11-12",
+        category: "Marketing",
+      },
+      {
+        active: false,
+        newTask: false,
+        completed: true,
+        failed: false,
+        title: "Finalize budget",
+        description: "Complete and submit the budget for next year.",
+        date: "2024-10-18",
+        category: "Finance",
+      },
+    ],
+    taskNumbers: {
+      active: 2,
+      newTask: 2,
+      completed: 1,
+      failed: 0,
+    },
+  },
+];
+
+const admin = [
+  {
+    Id: 1,
+    email: "admin@example.com",
+    password: "123",
+  },
+];
+
+export const setLocalStorage = () => {
+  localStorage.setItem("employees", JSON.stringify(employees));
+  localStorage.setItem("admin", JSON.stringify(admin));
+};
+export const getLocalStorage = () => {
+  const employees = JSON.parse(localStorage.getItem("employees"));
+  const admin = JSON.parse(localStorage.getItem("admin"));
+  return { employees, admin };
+};
